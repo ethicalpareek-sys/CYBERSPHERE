@@ -1,589 +1,713 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- =========================================================
-         CYBERSPHERE
-         Professional Cybersecurity Learning Platform
-         Frontend Entry Point
-    ========================================================== -->
 
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        content="width=device-width, initial-scale=1.0"
     >
 
     <meta
         name="description"
-        content="CYBERSPHERE — A modern cybersecurity learning, labs, research and project platform."
+        content="CYBERSPHERE — Next-generation cybersecurity learning platform by Bharat Pareek."
     >
-
-    <meta
-        name="keywords"
-        content="cybersecurity, ethical hacking, penetration testing, networking, CTF, security labs, cyber learning"
-    >
-
-    <meta name="author" content="Bharat Pareek">
 
     <meta
         name="theme-color"
         content="#05070d"
     >
 
-    <meta
-        name="color-scheme"
-        content="dark"
-    >
+    <title>
+        CYBERSPHERE | Bharat Pareek
+    </title>
 
-    <!-- Prevent accidental indexing during development.
-         Change this before production if you want search indexing. -->
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <!-- =========================================================
-         OPEN GRAPH
-    ========================================================== -->
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
-        property="og:title"
-        content="CYBERSPHERE — Cybersecurity Learning Platform"
-    >
-
-    <meta
-        property="og:description"
-        content="Learn cybersecurity through structured courses, practical labs, projects and security research."
-    >
-
-    <!-- =========================================================
-         FAVICON
-         Add your favicon later:
-         /assets/icons/favicon.svg
-    ========================================================== -->
-
-    <link
-        rel="icon"
-        href="./assets/icons/favicon.svg"
-        type="image/svg+xml"
-    >
-
-    <!-- =========================================================
-         PRECONNECT
-    ========================================================== -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <!-- =========================================================
-         FONT
-    ========================================================== -->
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- =========================================================
-         MAIN CSS
-    ========================================================== -->
-
+    <!-- Main CSS -->
     <link
         rel="stylesheet"
-        href="./css/style.css"
+        href="style.css"
     >
+
 </head>
+
 
 <body>
 
-    <!-- =========================================================
-         ACCESSIBILITY
-    ========================================================== -->
-
-    <a
-        class="skip-link"
-        href="#main-content"
-    >
-        Skip to main content
-    </a>
-
-
-    <!-- =========================================================
-         APP SHELL
-    ========================================================== -->
+    <!-- =====================================================
+         PAGE LOADER
+         ===================================================== -->
 
     <div
-        id="app"
-        class="app-shell"
-        data-page="home"
+        id="page-loader"
+        class="page-loader"
     >
 
-
-        <!-- =====================================================
-             BACKGROUND SYSTEM
-        ====================================================== -->
-
-        <div
-            class="background-system"
-            aria-hidden="true"
-        >
-
-            <div class="background-grid"></div>
-
-            <div class="background-glow background-glow--one"></div>
-
-            <div class="background-glow background-glow--two"></div>
-
-            <div class="background-noise"></div>
-
-            <div
-                id="particles"
-                class="particles"
-            ></div>
-
+        <div class="loader-core">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
+        <div class="loader-text">
+            INITIALIZING CYBERSPHERE...
+        </div>
 
-        <!-- =====================================================
-             HEADER / NAVIGATION
-        ====================================================== -->
+    </div>
 
-        <header
-            id="site-header"
-            class="site-header"
-        >
 
-            <div class="container nav-container">
+    <!-- =====================================================
+         SCROLL PROGRESS
+         ===================================================== -->
 
-                <!-- BRAND -->
+    <div
+        class="scroll-progress"
+        id="scroll-progress"
+    ></div>
+
+
+    <!-- =====================================================
+         CUSTOM CURSOR
+         ===================================================== -->
+
+    <div
+        class="cursor"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="cursor-follower"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="#home"
+                class="brand"
+            >
+
+                <span class="brand-symbol">
+                    &lt;/&gt;
+                </span>
+
+                <span class="brand-name">
+                    CYBER<span>SPHERE</span>
+                </span>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav-menu"
+                aria-label="Main navigation"
+            >
 
                 <a
-                    href="./index.html"
-                    class="brand"
-                    aria-label="CYBERSPHERE Home"
+                    href="#home"
+                    class="nav-link active"
                 >
+                    Home
+                </a>
 
-                    <span
-                        class="brand-mark"
-                        aria-hidden="true"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
+                <a
+                    href="#courses"
+                    class="nav-link"
+                >
+                    Courses
+                </a>
 
-                    <span class="brand-text">
+                <a
+                    href="#labs"
+                    class="nav-link"
+                >
+                    Cyber Labs
+                </a>
 
-                        <span class="brand-name">
-                            CYBERSPHERE
-                        </span>
+                <a
+                    href="#tools"
+                    class="nav-link"
+                >
+                    Tools
+                </a>
 
-                        <span class="brand-tagline">
-                            CYBER • LEARN • BUILD
-                        </span>
+                <a
+                    href="#projects"
+                    class="nav-link"
+                >
+                    Projects
+                </a>
 
-                    </span>
-
+                <a
+                    href="#about"
+                    class="nav-link"
+                >
+                    About
                 </a>
 
 
-                <!-- DESKTOP NAVIGATION -->
-
-                <nav
-                    id="primary-navigation"
-                    class="primary-navigation"
-                    aria-label="Primary navigation"
+                <button
+                    type="button"
+                    class="nav-theme"
+                    data-theme-toggle
+                    aria-label="Toggle theme"
                 >
-
-                    <a
-                        href="#home"
-                        class="nav-link active"
-                        data-nav="home"
-                    >
-                        Home
-                    </a>
-
-                    <a
-                        href="#courses"
-                        class="nav-link"
-                        data-nav="courses"
-                    >
-                        Courses
-                    </a>
-
-                    <a
-                        href="#labs"
-                        class="nav-link"
-                        data-nav="labs"
-                    >
-                        Labs
-                    </a>
-
-                    <a
-                        href="#roadmap"
-                        class="nav-link"
-                        data-nav="roadmap"
-                    >
-                        Roadmap
-                    </a>
-
-                    <a
-                        href="#projects"
-                        class="nav-link"
-                        data-nav="projects"
-                    >
-                        Projects
-                    </a>
-
-                    <a
-                        href="#research"
-                        class="nav-link"
-                        data-nav="research"
-                    >
-                        Research
-                    </a>
-
-                </nav>
+                    ◐
+                </button>
 
 
-                <!-- HEADER ACTIONS -->
+                <button
+                    type="button"
+                    class="nav-login"
+                    data-action="login"
+                >
+                    Login
+                </button>
 
-                <div class="header-actions">
+            </nav>
 
-                    <button
-                        id="theme-toggle"
-                        class="icon-button"
-                        type="button"
-                        aria-label="Toggle theme"
-                        title="Toggle theme"
-                    >
-                        <span
-                            aria-hidden="true"
-                        >
-                            ◐
-                        </span>
-                    </button>
+        </div>
+
+    </header>
 
 
-                    <a
-                        href="./login.html"
-                        class="button button--ghost"
-                    >
-                        Sign In
-                    </a>
+    <!-- =====================================================
+         NEXT-GEN 3D AI HERO
+         ===================================================== -->
+
+    <main>
+
+        <section
+            class="ai-hero"
+            id="home"
+        >
+
+            <!-- THREE.JS CANVAS -->
+
+            <canvas
+                id="ai-cyber-canvas"
+            ></canvas>
 
 
-                    <a
-                        href="./signup.html"
-                        class="button button--primary"
-                    >
-                        Get Started
-                    </a>
+            <!-- BACKGROUND -->
+
+            <div
+                class="ai-hero-noise"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="ai-hero-grid"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="ai-glow ai-glow-1"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="ai-glow ai-glow-2"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="ai-glow ai-glow-3"
+                aria-hidden="true"
+            ></div>
 
 
-                    <!-- MOBILE MENU -->
+            <!-- SYSTEM BAR -->
 
-                    <button
-                        id="mobile-menu-button"
-                        class="mobile-menu-button"
-                        type="button"
-                        aria-label="Open navigation menu"
-                        aria-controls="primary-navigation"
-                        aria-expanded="false"
-                    >
+            <div class="ai-system-bar">
 
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <div class="system-left">
 
-                    </button>
+                    <span
+                        class="system-indicator"
+                    ></span>
+
+                    <span>
+                        CYBERSPHERE CORE
+                    </span>
+
+                </div>
+
+
+                <div class="system-center">
+
+                    AI SECURITY NETWORK
+
+                </div>
+
+
+                <div class="system-right">
+
+                    <span>
+                        SYSTEM
+                    </span>
+
+                    <strong>
+                        ONLINE
+                    </strong>
 
                 </div>
 
             </div>
 
-        </header>
+
+            <!-- HERO CONTAINER -->
+
+            <div class="ai-hero-container">
 
 
-        <!-- =====================================================
-             MAIN CONTENT
-        ====================================================== -->
+                <!-- =========================================
+                     LEFT SIDE
+                     ========================================= -->
 
-        <main
-            id="main-content"
-            class="main-content"
-        >
-
-
-            <!-- =================================================
-                 HERO
-            ================================================== -->
-
-            <section
-                id="home"
-                class="hero-section section"
-                aria-labelledby="hero-title"
-            >
-
-                <div class="container hero-container">
+                <div
+                    class="ai-hero-content"
+                    data-reveal
+                >
 
 
-                    <!-- HERO CONTENT -->
+                    <!-- BADGE -->
 
-                    <div class="hero-content">
+                    <div class="ai-badge">
 
-                        <div class="status-badge">
+                        <span
+                            class="ai-badge-dot"
+                        ></span>
 
-                            <span
-                                class="status-indicator"
-                                aria-hidden="true"
-                            ></span>
+                        NEXT-GEN CYBERSECURITY
 
-                            <span>
-                                CYBERSECURITY PLATFORM
-                            </span>
-
-                            <span
-                                class="status-arrow"
-                                aria-hidden="true"
-                            >
-                                →
-                            </span>
-
-                        </div>
+                    </div>
 
 
-                        <p class="hero-eyebrow">
-                            ENTER THE
-                            <span>CYBERSPACE</span>
-                        </p>
+                    <!-- KICKER -->
+
+                    <p class="ai-kicker">
+
+                        <span>
+                            &gt;
+                        </span>
+
+                        THE FUTURE OF DIGITAL DEFENSE
+
+                    </p>
 
 
-                        <h1
-                            id="hero-title"
-                            class="hero-title"
-                        >
+                    <!-- TITLE -->
 
+                    <h1 class="ai-title">
+
+                        <span class="ai-title-line">
                             MASTER
-                            <span class="hero-title-highlight">
-                                CYBERSECURITY
-                            </span>
+                        </span>
 
-                        </h1>
+                        <span
+                            class="ai-title-line ai-title-gradient"
+                        >
+                            CYBER
+                        </span>
 
+                        <span class="ai-title-line">
+                            SECURITY
+                        </span>
 
-                        <p class="hero-description">
-
-                            Learn cybersecurity from fundamentals
-                            to advanced security engineering through
-                            structured courses, hands-on labs,
-                            real-world projects and research.
-
-                        </p>
+                    </h1>
 
 
-                        <!-- HERO CTA -->
+                    <!-- TERMINAL -->
 
-                        <div class="hero-actions">
+                    <div class="ai-terminal-line">
 
-                            <a
-                                href="#courses"
-                                class="button button--primary button--large"
-                                data-action="explore-courses"
-                            >
-                                <span>Explore Courses</span>
+                        <span class="terminal-symbol">
+                            &gt;_
+                        </span>
 
-                                <span
-                                    aria-hidden="true"
-                                >
-                                    →
-                                </span>
+                        <span id="ai-typing">
+                            Learn • Hack • Defend • Build
+                        </span>
 
-                            </a>
+                        <span
+                            class="terminal-cursor"
+                        ></span>
 
-
-                            <a
-                                href="#labs"
-                                class="button button--outline button--large"
-                            >
-                                <span
-                                    aria-hidden="true"
-                                >
-                                    ◈
-                                </span>
-
-                                <span>
-                                    Enter Labs
-                                </span>
-
-                            </a>
-
-                        </div>
+                    </div>
 
 
-                        <!-- HERO METRICS -->
+                    <!-- DESCRIPTION -->
+
+                    <p class="ai-description">
+
+                        Build real cybersecurity skills across
+                        networking, Linux, ethical hacking,
+                        penetration testing, cloud security,
+                        digital forensics and AI-powered defense.
+
+                    </p>
+
+
+                    <!-- =====================================
+                         BHARAT PAREEK
+                         ===================================== -->
+
+                    <div class="ai-creator">
+
+                        <span class="creator-label">
+                            ENGINEERED BY
+                        </span>
+
 
                         <div
-                            class="hero-metrics"
-                            aria-label="Platform statistics"
+                            class="creator-3d"
+                            id="creator-3d"
                         >
 
-                            <div class="metric">
+                            <span class="creator-layer creator-layer-4">
+                                BHARAT PAREEK
+                            </span>
 
-                                <strong>
-                                    50+
-                                </strong>
+                            <span class="creator-layer creator-layer-3">
+                                BHARAT PAREEK
+                            </span>
 
-                                <span>
-                                    Learning Paths
-                                </span>
+                            <span class="creator-layer creator-layer-2">
+                                BHARAT PAREEK
+                            </span>
 
-                            </div>
+                            <span class="creator-layer creator-layer-1">
+                                BHARAT PAREEK
+                            </span>
 
+                            <span class="creator-front">
+                                BHARAT PAREEK
+                            </span>
 
-                            <div class="metric-divider"></div>
-
-
-                            <div class="metric">
-
-                                <strong>
-                                    100+
-                                </strong>
-
-                                <span>
-                                    Security Labs
-                                </span>
-
-                            </div>
+                        </div>
 
 
-                            <div class="metric-divider"></div>
+                        <div class="creator-line">
 
+                            <span></span>
 
-                            <div class="metric">
+                            <small>
+                                CYBERSECURITY • AI • ETHICAL HACKING
+                            </small>
 
-                                <strong>
-                                    ∞
-                                </strong>
-
-                                <span>
-                                    Possibilities
-                                </span>
-
-                            </div>
+                            <span></span>
 
                         </div>
 
                     </div>
 
 
-                    <!-- HERO 3D / CYBER CORE -->
+                    <!-- =====================================
+                         BUTTONS
+                         ===================================== -->
+
+                    <div class="ai-actions">
+
+
+                        <button
+                            class="ai-btn ai-btn-primary"
+                            type="button"
+                            data-action="start-learning"
+                        >
+
+                            <span class="ai-btn-icon">
+                                ⚡
+                            </span>
+
+                            <span>
+                                Start Learning
+                            </span>
+
+                            <span class="ai-btn-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="ai-btn ai-btn-secondary"
+                            type="button"
+                            data-action="scroll-courses"
+                        >
+
+                            <span class="ai-btn-icon">
+                                ◈
+                            </span>
+
+                            <span>
+                                Explore Cyber Labs
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =====================================
+                         METRICS
+                         ===================================== -->
+
+                    <div class="ai-metrics">
+
+
+                        <div class="ai-metric">
+
+                            <strong data-counter="50">
+                                0
+                            </strong>
+
+                            <span>
+                                SECURITY TOPICS
+                            </span>
+
+                        </div>
+
+
+                        <div class="metric-separator"></div>
+
+
+                        <div class="ai-metric">
+
+                            <strong data-counter="100">
+                                0
+                            </strong>
+
+                            <span>
+                                PRACTICAL LABS
+                            </span>
+
+                        </div>
+
+
+                        <div class="metric-separator"></div>
+
+
+                        <div class="ai-metric">
+
+                            <strong data-counter="24">
+                                0
+                            </strong>
+
+                            <span>
+                                /7 LEARNING
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     RIGHT SIDE — 3D WORLD
+                     ========================================= -->
+
+                <div
+                    class="ai-hero-visual"
+                    data-reveal
+                >
 
                     <div
-                        class="hero-visual"
-                        aria-hidden="true"
+                        class="ai-3d-world"
+                        id="ai-3d-world"
                     >
 
-                        <div class="cyber-core">
 
-                            <div class="core-orbit core-orbit--one">
-                                <span></span>
-                            </div>
+                        <!-- RETICLES -->
 
-                            <div class="core-orbit core-orbit--two">
-                                <span></span>
-                            </div>
+                        <div
+                            class="world-reticle reticle-top"
+                        >
 
-                            <div class="core-orbit core-orbit--three">
-                                <span></span>
-                            </div>
+                            <span></span>
 
-
-                            <div class="core-ring core-ring--outer"></div>
-
-                            <div class="core-ring core-ring--middle"></div>
-
-                            <div class="core-ring core-ring--inner"></div>
-
-
-                            <div class="core-center">
-
-                                <div class="core-symbol">
-                                    &lt;/&gt;
-                                </div>
-
-                                <span>
-                                    SECURE
-                                </span>
-
-                            </div>
+                            <small>
+                                AI CORE
+                            </small>
 
                         </div>
 
 
-                        <!-- Floating data cards -->
+                        <div
+                            class="world-reticle reticle-right"
+                        >
 
-                        <div class="floating-card floating-card--one">
-
-                            <span class="floating-icon">
-                                ◉
-                            </span>
-
-                            <span>
-                                NETWORK
-                            </span>
-
-                            <strong>
-                                SECURED
-                            </strong>
-
-                        </div>
-
-
-                        <div class="floating-card floating-card--two">
-
-                            <span class="floating-icon">
-                                ◇
-                            </span>
-
-                            <span>
+                            <small>
                                 THREAT
-                            </span>
+                            </small>
 
                             <strong>
-                                ANALYSIS
+                                LOW
                             </strong>
 
                         </div>
 
 
-                        <div class="floating-card floating-card--three">
+                        <div
+                            class="world-reticle reticle-bottom"
+                        >
 
-                            <span class="floating-icon">
-                                #
-                            </span>
-
-                            <span>
-                                SYSTEM
-                            </span>
+                            <small>
+                                NODE
+                            </small>
 
                             <strong>
-                                ONLINE
+                                BP-001
                             </strong>
+
+                        </div>
+
+
+                        <!-- FLOATING AI CARD -->
+
+                        <div
+                            class="ai-floating-card card-ai"
+                        >
+
+                            <div class="floating-icon">
+                                AI
+                            </div>
+
+                            <div class="floating-content">
+
+                                <small>
+                                    AI ENGINE
+                                </small>
+
+                                <strong>
+                                    ACTIVE
+                                </strong>
+
+                            </div>
+
+                            <span
+                                class="floating-status"
+                            ></span>
+
+                        </div>
+
+
+                        <!-- NETWORK CARD -->
+
+                        <div
+                            class="ai-floating-card card-network"
+                        >
+
+                            <div class="floating-icon">
+                                ⌁
+                            </div>
+
+                            <div class="floating-content">
+
+                                <small>
+                                    NETWORK
+                                </small>
+
+                                <strong>
+                                    SECURE
+                                </strong>
+
+                            </div>
+
+                            <span
+                                class="floating-status"
+                            ></span>
+
+                        </div>
+
+
+                        <!-- PENTEST CARD -->
+
+                        <div
+                            class="ai-floating-card card-pentest"
+                        >
+
+                            <div class="floating-icon">
+                                ◉
+                            </div>
+
+                            <div class="floating-content">
+
+                                <small>
+                                    PENTEST
+                                </small>
+
+                                <strong>
+                                    READY
+                                </strong>
+
+                            </div>
+
+                            <span
+                                class="floating-status"
+                            ></span>
+
+                        </div>
+
+
+                        <!-- LINUX CARD -->
+
+                        <div
+                            class="ai-floating-card card-linux"
+                        >
+
+                            <div class="floating-icon">
+                                $_
+                            </div>
+
+                            <div class="floating-content">
+
+                                <small>
+                                    LINUX
+                                </small>
+
+                                <strong>
+                                    ONLINE
+                                </strong>
+
+                            </div>
+
+                            <span
+                                class="floating-status"
+                            ></span>
 
                         </div>
 
@@ -591,133 +715,121 @@
 
                 </div>
 
+            </div>
 
-                <!-- SCROLL INDICATOR -->
 
-                <a
-                    href="#platform"
-                    class="scroll-indicator"
-                    aria-label="Scroll to platform overview"
-                >
+            <!-- =============================================
+                 TELEMETRY
+                 ============================================= -->
 
-                    <span>
-                        SCROLL TO EXPLORE
+            <div class="ai-telemetry">
+
+
+                <div class="telemetry-item">
+
+                    <span class="telemetry-label">
+                        NETWORK
                     </span>
 
-                    <span
-                        class="scroll-line"
-                        aria-hidden="true"
-                    ></span>
-
-                </a>
-
-            </section>
-
-
-            <!-- =================================================
-                 PLATFORM OVERVIEW
-            ================================================== -->
-
-            <section
-                id="platform"
-                class="platform-section section"
-                aria-labelledby="platform-title"
-            >
-
-                <div class="container">
-
-                    <div class="section-heading">
-
-                        <p class="section-kicker">
-                            ONE ECOSYSTEM
-                        </p>
-
-                        <h2
-                            id="platform-title"
-                            class="section-title"
-                        >
-                            Everything You Need to
-                            <span>Build Security Skills</span>
-                        </h2>
-
-                        <p class="section-description">
-                            CYBERSPHERE combines structured education,
-                            practical experimentation and project-based
-                            learning into one cybersecurity ecosystem.
-                        </p>
-
+                    <div class="telemetry-bar">
+                        <span
+                            style="width:92%"
+                        ></span>
                     </div>
 
+                    <strong>
+                        92%
+                    </strong>
 
-                    <div class="feature-grid">
-
-
-                        <!-- COURSES -->
-
-                        <article
-                            class="feature-card"
-                            data-feature="courses"
-                        >
-
-                            <div class="feature-number">
-                                01
-                            </div>
-
-                            <div
-                                class="feature-icon"
-                                aria-hidden="true"
-                            >
-                                ◈
-                            </div>
-
-                            <h3>
-                                Cyber Courses
-                            </h3>
-
-                            <p>
-                                Master networking, Linux, web security,
-                                penetration testing, cloud security,
-                                digital forensics and more.
-                            </p>
-
-                            <a
-                                href="#courses"
-                                class="feature-link"
-                            >
-                                Explore Courses →
-                            </a>
-
-                        </article>
+                </div>
 
 
-                        <!-- LABS -->
+                <div class="telemetry-item">
 
-                        <article
-                            class="feature-card"
-                            data-feature="labs"
-                        >
+                    <span class="telemetry-label">
+                        AI DEFENSE
+                    </span>
 
-                            <div class="feature-number">
-                                02
-                            </div>
+                    <div class="telemetry-bar">
+                        <span
+                            style="width:87%"
+                        ></span>
+                    </div>
 
-                            <div
-                                class="feature-icon"
-                                aria-hidden="true"
-                            >
-                                ◉
-                            </div>
+                    <strong>
+                        87%
+                    </strong>
 
-                            <h3>
-                                Security Labs
-                            </h3>
+                </div>
 
-                            <p>
-                                Practice security concepts in
-                                authorized sandbox environments and
-                                controlled cybersecurity challenges.
-                            </p>
 
-                            <a
-                                href="#labs"
-                                class="feature-lin
+                <div class="telemetry-item">
+
+                    <span class="telemetry-label">
+                        CORE
+                    </span>
+
+                    <div class="telemetry-bar">
+                        <span
+                            style="width:98%"
+                        ></span>
+                    </div>
+
+                    <strong>
+                        98%
+                    </strong>
+
+                </div>
+
+
+                <div class="telemetry-live">
+
+                    <span class="live-dot"></span>
+
+                    <span>
+                        LIVE SECURITY TELEMETRY
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCROLL -->
+
+            <button
+                class="ai-scroll-indicator"
+                type="button"
+                data-action="scroll-down"
+            >
+
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
+
+                <strong>
+                    ↓
+                </strong>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             TEMPORARY SECTIONS
+             ================================================= -->
+
+        <section id="courses" class="placeholder-section">
+            <div class="container">
+                <h2>Cybersecurity Courses</h2>
+                <p>
+                    Courses section will be built next.
+                </p>
+            </div>
+        </section>
+
+
+        <section id="labs" class="placeholder-section">
+            <div class="container">
+                <h2>Cyber
